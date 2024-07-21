@@ -1,31 +1,41 @@
-#  Task 1 @codsoft# python intrenship
+# Task 1 @codsoft# python internship
 """designing a simple calculator"""
-print("welcome to the mini  calculator made by chirag miglani ")
-print("1. addition")
-print("2. sutraction")
-print("3. multiplication")
-print("4. division")
-print("choose any of the above operation that you want:")
-option= int(input("choose any operation:"))
-if(option in [1,2,3,4]):
-    digit1= int(input("enter a number of your choicee :"))
-    digit2=int(input("enter the second number of your choice:"))
 
-    if (option==1):
-        finalresult=digit1+digit2
-    elif(option==2):
-        finalresult=digit1-digit2
-    elif(option==3):
-        finalresult=digit1*digit2
-    elif(option==4):
-        finalresult=digit1/digit2
+print("Welcome to the mini calculator made by Chirag Miglani")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+option = int(input("Choose any operation (1/2/3/4): "))
+
+if option in [1, 2, 3, 4]:
+    digit1 = int(input("Enter the first number: "))
+    digit2 = int(input("Enter the second number: "))
+
+    if option == 1:
+        final_result = digit1 + digit2
+        operation = "Addition"
+    elif option == 2:
+        final_result = digit1 - digit2
+        operation = "Subtraction"
+    elif option == 3:
+        final_result = digit1 * digit2
+        operation = "Multiplication"
+    elif option == 4:
+        if digit2 != 0:
+            final_result = digit1 / digit2
+            operation = "Division"
+        else:
+            print("Error: Division by zero")
+            final_result = None
+            operation = "Division (oops showing error)"
+
+    if final_result is not None:
+        print(f"The result of {operation} is {final_result}")
+    else:
+        print(f"Cannot perform {operation} operation.")
+
+    print("Thank you for using  my mini calculator!")
 else:
-    print("The operation which user entered is inappropriate")
+    print("Invalid option selected. Please bro  choose a valid operation (1/2/3/4).")
 
-print(f"The result of {option} is {finalresult}")
-print("The Final Result is shown to you Thanks for using my calculator:")
-
-
-
-
-     
